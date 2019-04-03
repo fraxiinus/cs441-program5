@@ -28,11 +28,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         tokenImageManager = TokenImageManager()
-        toolController = ToolController(tokenImageManager)
+        toolController = ToolController(tokenImageManager, this)
 
         findViewById<ImageView>(R.id.champtool).setOnClickListener { v -> toolController.handleChampTool(v) }
         findViewById<ImageView>(R.id.wardtool).setOnClickListener { v -> toolController.handleWardTool(v) }
         findViewById<ImageView>(R.id.drawtool).setOnClickListener { v -> toolController.handleDrawTool(v) }
+
+        val decorView = window.decorView
+        decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                or View.SYSTEM_UI_FLAG_FULLSCREEN
+                or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
