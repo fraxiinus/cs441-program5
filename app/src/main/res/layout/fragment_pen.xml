@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/darker_gray">
+
+    <TextView
+            android:id="@+id/pentitle"
+            android:text="Title"
+            android:textSize="30sp"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:text="Red: 0"
+            android:textSize="15sp"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="#ff2323"
+            android:thumbTint="#ff0000"/>
+
+    <TextView
+            android:text="Green: 0"
+            android:textSize="15sp"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="#23ff23"
+            android:thumbTint="#00ff00"/>
+
+    <TextView
+            android:text="Blue: 0"
+            android:textSize="15sp"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="#2323ff"
+            android:thumbTint="#0000ff"/>
+
+    <TextView
+            android:text="Size"
+            android:textSize="15sp"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="#232323"
+            android:thumbTint="#000000"/>
+
+</LinearLayout>

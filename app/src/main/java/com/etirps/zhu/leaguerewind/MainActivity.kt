@@ -30,9 +30,9 @@ class MainActivity : AppCompatActivity() {
         tokenImageManager = TokenImageManager()
         toolController = ToolController(tokenImageManager, this)
 
-        findViewById<ImageView>(R.id.champtool).setOnClickListener { v -> toolController.handleChampTool(v) }
-        findViewById<ImageView>(R.id.wardtool).setOnClickListener { v -> toolController.handleWardTool(v) }
-        findViewById<ImageView>(R.id.drawtool).setOnClickListener { v -> toolController.handleDrawTool(v) }
+        findViewById<ImageView>(R.id.champtool).setOnClickListener { toolController.handleChampTool() }
+        findViewById<ImageView>(R.id.wardtool).setOnClickListener { toolController.handleWardTool() }
+        findViewById<ImageView>(R.id.drawtool).setOnClickListener { toolController.handleDrawTool() }
 
         val decorView = window.decorView
         decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
