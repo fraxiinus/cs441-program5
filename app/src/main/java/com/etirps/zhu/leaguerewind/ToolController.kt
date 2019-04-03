@@ -1,32 +1,49 @@
 package com.etirps.zhu.leaguerewind
 
 import android.app.AlertDialog
-import android.content.ClipData
-import android.content.Context
-import android.content.DialogInterface
+import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.SimpleAdapter
 import android.widget.Toast
 
-class ToolController(val tokens: TokenImageManager) {
+class ToolController(val tokens: TokenImageManager, val activity: AppCompatActivity) {
+
+    private var currentFragment: TokenSelectionFragment? = null
 
     fun getCurrentTool() {
 
     }
 
     fun handleChampTool(v: View) {
-        showSelectDialog(v, tokens.championTitles)
+        showToolFragment(TokenSelectionFragment.newInstance("Champions", tokens.championTitles))
     }
 
     fun handleWardTool(v: View) {
-        showSelectDialog(v, tokens.wardTitles)
+        showToolFragment(TokenSelectionFragment.newInstance("Wards", tokens.wardTitles))
     }
 
     fun handleDrawTool(v: View) {
         Toast.makeText(v.context, "draw tool", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun showToolFragment(fragment: TokenSelectionFragment) {
+        if(fragment.arguments?.get("title") != currentFragment?.arguments?.get("title")) {
+            if(currentFragment != null) {
+                activity.supportFragmentManager.popBackStack()
+                currentFragment = null
+            }
+
+            val ft = activity.supportFragmentManager.beginTransaction()
+            ft.replace(R.id.placeholder, fragment)
+            ft.addToBackStack(null)
+            ft.commit()
+            currentFragment = fragment
+        } else {
+            activity.supportFragmentManager.popBackStack()
+            currentFragment = null
+        }
     }
 
     private fun showSelectDialog(view: View, names: Array<String>): String {

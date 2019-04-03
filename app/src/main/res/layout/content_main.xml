@@ -44,6 +44,7 @@
             android:layout_height="match_parent"
             app:layout_constraintStart_toEndOf="@id/toolbarlayout"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/placeholder"
             android:id="@+id/maplayout">
         <ImageView
                 android:padding="5dp"
@@ -57,5 +58,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/drawview"/>
+    </FrameLayout>
+
+    <FrameLayout
+            android:id="@+id/placeholder"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
     </FrameLayout>
 </android.support.constraint.ConstraintLayout>
