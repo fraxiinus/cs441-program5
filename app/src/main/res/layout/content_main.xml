@@ -20,6 +20,14 @@
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
                 android:paddingBottom="5dp"
+                app:srcCompat="@drawable/draw"
+                android:id="@+id/drawtool"/>
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:paddingBottom="5dp"
                 app:srcCompat="@drawable/nidalee"
                 android:id="@+id/champtool"/>
         <ImageView
@@ -56,11 +64,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@+id/toolbarlayout"
             android:id="@+id/maplayout">
-        <TextView
-                android:text="Map Layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/textView"/>
-
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
