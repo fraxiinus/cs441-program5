@@ -1,5 +1,9 @@
 package com.etirps.zhu.leaguerewind
 
+import android.content.ClipData
+import android.content.Context
+import android.content.res.Resources
+
 class TokenImageManager {
 
     val championTitles = arrayOf("Ezreal", "Kayle", "Lee Sin", "Morgana", "Neeko", "Nidalee", "Thresh", "Vel'Koz", "Yasuo", "Zed")
@@ -27,12 +31,5 @@ class TokenImageManager {
         if(!championTitles.contains(name)) { return "" }
         val cleaned = name.clean()
         return "drawable/$cleaned.png"
-    }
-
-    /**
-     * Return string with only letters, numbers, and no whitespace
-     */
-    private fun String.clean(): String {
-        return Regex("[^A-Za-z0-9]").replace(this, "").toLowerCase()
     }
 }
