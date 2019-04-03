@@ -6,12 +6,10 @@
 
     <LinearLayout
             android:orientation="vertical"
-            android:layout_width="75dp"
-            android:layout_height="0dp"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
             android:background="@android:color/darker_gray"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:padding="5dp"
             android:id="@+id/toolbarlayout">
         <ImageView
@@ -40,39 +38,24 @@
                 android:id="@+id/wardtool"/>
     </LinearLayout>
 
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="75dp"
-            android:layout_height="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@android:color/darker_gray"
-            android:id="@+id/seekbarlayout">
-        <TextView
-                android:text="Seek Layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView3"/>
-    </LinearLayout>
-
 
     <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintEnd_toStartOf="@+id/seekbarlayout"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/toolbarlayout"
+            android:layout_width="500dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/toolbarlayout"
+            app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/maplayout">
         <ImageView
+                android:padding="5dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+
                 app:srcCompat="@drawable/srfull"
-                android:id="@+id/imageView"/>
+                android:id="@+id/mapimage"/>
 
         <com.etirps.zhu.leaguerewind.Drawing
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
+                android:layout_height="wrap_content"
+                android:id="@+id/drawview"/>
     </FrameLayout>
 </android.support.constraint.ConstraintLayout>
