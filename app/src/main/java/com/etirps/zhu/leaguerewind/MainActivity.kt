@@ -15,21 +15,23 @@ import android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
 import android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE
 import android.view.View
 import android.widget.ImageView
-import android.widget.LinearLayout
-
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var toolController: ToolController
+    private lateinit var tokenImageManager: TokenImageManager
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        toolController = ToolController()
+        tokenImageManager = TokenImageManager()
+        toolController = ToolController(tokenImageManager)
 
         findViewById<ImageView>(R.id.champtool).setOnClickListener { v -> toolController.handleChampTool(v) }
         findViewById<ImageView>(R.id.wardtool).setOnClickListener { v -> toolController.handleWardTool(v) }
+        findViewById<ImageView>(R.id.drawtool).setOnClickListener { v -> toolController.handleDrawTool(v) }
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
