@@ -28,6 +28,14 @@ class Drawing(context: Context, attrs: AttributeSet) : View(context, attrs) {
         }
     }
 
+    fun changeColor(color: Int) {
+        myPaint.color = color
+    }
+
+    fun changeWidth(width: Float) {
+        myPaint.strokeWidth = width
+    }
+
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         canvas.drawPath(myPath, myPaint);
