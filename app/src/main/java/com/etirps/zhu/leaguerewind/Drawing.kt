@@ -11,7 +11,7 @@ import android.view.MotionEvent
 
 class Drawing(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
-    private var myPaint = Paint()
+    var myPaint = Paint()
     private var myPath = Path()
     private var currentX = 0f
     private var currentY = 0f
@@ -30,7 +30,7 @@ class Drawing(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        canvas.drawPath(myPath, myPaint);
+        canvas.drawPath(myPath, myPaint)
     }
 
     private fun pressDown(x: Float, y: Float) {

@@ -9,12 +9,11 @@ import android.widget.ListView
 import android.widget.SimpleAdapter
 import android.widget.Toast
 
-class ToolController(val tokens: TokenImageManager, val activity: AppCompatActivity) {
+class ToolController(private val tokens: TokenImageManager, private val activity: AppCompatActivity) {
 
     private var currentFragment: Fragment? = null
 
     fun getCurrentTool() {
-
     }
 
     fun handleChampTool() {
@@ -27,6 +26,7 @@ class ToolController(val tokens: TokenImageManager, val activity: AppCompatActiv
 
     fun handleDrawTool() {
         showToolFragment(PenToolFragment.newInstance("Pen Tool"))
+
     }
 
     private fun showToolFragment(fragment: Fragment) {
