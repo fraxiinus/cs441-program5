@@ -10,6 +10,8 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.view.MotionEvent
 
+data class LineStroke(var paint: Paint, var path: Path)
+
 class Drawing(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     var myPaint = Paint()
@@ -18,6 +20,7 @@ class Drawing(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var currentY = 0f
     private var startX = 0f
     private var startY = 0f
+    private var myLines = mutableListOf<LineStroke>()
 
     init {
         myPaint.apply {
