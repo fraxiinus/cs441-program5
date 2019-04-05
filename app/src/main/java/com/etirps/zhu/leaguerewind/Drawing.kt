@@ -1,5 +1,6 @@
 package com.etirps.zhu.leaguerewind
 
+import android.app.Activity
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
@@ -34,6 +35,10 @@ class Drawing(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     private fun pressDown(x: Float, y: Float) {
+        val appData = context.applicationContext as ApplicationData
+        myPaint.color = appData.colorInt
+        myPaint.strokeWidth = appData.strokeWidth.toFloat()
+
         myPath.moveTo(x, y)
         currentX = x
         currentY = y
