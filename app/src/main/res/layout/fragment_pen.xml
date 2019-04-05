@@ -37,7 +37,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:progressTint="#ff2323"
-            android:thumbTint="#ff0000"/>
+            android:thumbTint="#ff0000"
+            android:id="@+id/sb_redvalue"/>
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -62,7 +63,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:progressTint="#23ff23"
-            android:thumbTint="#00ff00"/>
+            android:thumbTint="#00ff00"
+            android:id="@+id/sb_greenvalue"/>
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -87,7 +89,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:progressTint="#2323ff"
-            android:thumbTint="#0000ff"/>
+            android:thumbTint="#0000ff"
+            android:id="@+id/sb_bluevalue"/>
 
     <TextView
             android:layout_width="match_parent"
@@ -96,7 +99,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:background="#ffffff"
-            android:layout_height="30dp"/>
+            android:layout_height="30dp"
+            android:id="@+id/tv_previewcolor"/>
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -121,6 +125,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:progressTint="#232323"
-            android:thumbTint="#000000"/>
+            android:thumbTint="#000000"
+            android:id="@+id/sb_sizevalue"/>
 
 </LinearLayout>
