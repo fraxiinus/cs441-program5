@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="5dp"
+            android:id="@+id/toolbarlayout">
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:paddingBottom="5dp"
+                app:srcCompat="@drawable/draw"
+                android:id="@+id/drawtool"/>
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:paddingBottom="5dp"
+                app:srcCompat="@drawable/nidalee"
+                android:id="@+id/champtool"/>
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:paddingBottom="5dp"
+                app:srcCompat="@drawable/stealth"
+                android:id="@+id/wardtool"/>
+    </LinearLayout>
+
+
+    <FrameLayout
+            android:layout_width="500dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/toolbarlayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/placeholder"
+            android:id="@+id/maplayout">
+        <ImageView
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                app:srcCompat="@drawable/srfull"
+                android:id="@+id/mapimage"/>
+
+        <com.etirps.zhu.leaguerewind.Drawing
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/drawview"/>
+    </FrameLayout>
+
+    <FrameLayout
+            android:id="@+id/placeholder"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+    </FrameLayout>
+</android.support.constraint.ConstraintLayout>
