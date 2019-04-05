@@ -18,7 +18,7 @@
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
                 android:paddingBottom="5dp"
-                app:srcCompat="@drawable/draw"
+                app:srcCompat="@drawable/scribble"
                 android:id="@+id/drawtool"/>
         <ImageView
                 android:layout_width="match_parent"
@@ -36,6 +36,14 @@
                 android:paddingBottom="5dp"
                 app:srcCompat="@drawable/stealth"
                 android:id="@+id/wardtool"/>
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:paddingBottom="5dp"
+                app:srcCompat="@drawable/clearimage"
+                android:id="@+id/cleartool"/>
     </LinearLayout>
 
 

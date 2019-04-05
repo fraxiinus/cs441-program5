@@ -6,4 +6,6 @@ import android.graphics.Color
 class ApplicationData : Application() {
     var colorInt: Int = Color.BLACK
     var strokeWidth: Int = 8
+
+    var clearFlag: Boolean = false
 }

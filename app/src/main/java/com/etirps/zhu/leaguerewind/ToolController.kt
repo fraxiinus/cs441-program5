@@ -1,6 +1,7 @@
 package com.etirps.zhu.leaguerewind
 
 import android.app.AlertDialog
+import android.content.DialogInterface
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
@@ -27,6 +28,30 @@ class ToolController(private val tokens: TokenImageManager, private val activity
     fun handleDrawTool() {
         showToolFragment(PenToolFragment.newInstance("Pen Tool"))
 
+    }
+
+    fun handleClearButton() {
+        showConfirmation()
+    }
+
+    private fun showConfirmation(): AlertDialog {
+        val dialog = AlertDialog.Builder(activity)
+        dialog.setTitle("Are you sure?")
+        dialog.setMessage("Completely clear the drawing?")
+
+        dialog.setPositiveButton("YES") { dialogInterface: DialogInterface, which: Int ->
+            (activity.application as ApplicationData).clearFlag = true
+            dialogInterface.dismiss()
+        }
+
+        dialog.setNegativeButton("NO") { dialogInterface: DialogInterface, which: Int ->
+            (activity.application as ApplicationData).clearFlag = false
+            dialogInterface.dismiss()
+        }
+
+        val alertDialog = dialog.create()
+        alertDialog.show()
+        return alertDialog
     }
 
     private fun showToolFragment(fragment: Fragment) {

@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<ImageView>(R.id.champtool).setOnClickListener { toolController.handleChampTool() }
         findViewById<ImageView>(R.id.wardtool).setOnClickListener { toolController.handleWardTool() }
         findViewById<ImageView>(R.id.drawtool).setOnClickListener { toolController.handleDrawTool() }
+        findViewById<ImageView>(R.id.cleartool).setOnClickListener { toolController.handleClearButton() }
 
         val decorView = window.decorView
         decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
