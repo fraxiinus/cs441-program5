@@ -1,5 +1,6 @@
 package com.etirps.zhu.leaguerewind
 
+import android.app.Activity
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
@@ -9,14 +10,17 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.view.MotionEvent
 
+data class LineStroke(var paint: Paint, var path: Path)
+
 class Drawing(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
-    private var myPaint = Paint()
+    var myPaint = Paint()
     private var myPath = Path()
     private var currentX = 0f
     private var currentY = 0f
     private var startX = 0f
     private var startY = 0f
+    private var myLines = mutableListOf<LineStroke>()
 
     init {
         myPaint.apply {
@@ -30,10 +34,14 @@ class Drawing(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        canvas.drawPath(myPath, myPaint);
+        canvas.drawPath(myPath, myPaint)
     }
 
     private fun pressDown(x: Float, y: Float) {
+        val appData = context.applicationContext as ApplicationData
+        myPaint.color = appData.colorInt
+        myPaint.strokeWidth = appData.strokeWidth.toFloat()
+
         myPath.moveTo(x, y)
         currentX = x
         currentY = y
