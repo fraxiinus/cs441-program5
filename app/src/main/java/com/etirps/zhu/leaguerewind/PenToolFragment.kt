@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import android.widget.TextView
-import android.widget.Toast
 
 class PenToolFragment: Fragment(), SeekBar.OnSeekBarChangeListener {
 
@@ -39,7 +38,7 @@ class PenToolFragment: Fragment(), SeekBar.OnSeekBarChangeListener {
 
         // set initial positions
         val colorInt = (activity?.application as ApplicationData).colorInt
-        val strokeSize = (activity?.application as ApplicationData).strokeSize
+        val strokeSize = (activity?.application as ApplicationData).strokeWidth
         layout.findViewById<SeekBar>(R.id.sb_redvalue).progress = ((Color.red(colorInt) / 255f) * 100f).toInt()
         layout.findViewById<SeekBar>(R.id.sb_greenvalue).progress = ((Color.green(colorInt) / 255f) * 100f).toInt()
         layout.findViewById<SeekBar>(R.id.sb_bluevalue).progress = ((Color.blue(colorInt) / 255f) * 100f).toInt()
@@ -61,10 +60,6 @@ class PenToolFragment: Fragment(), SeekBar.OnSeekBarChangeListener {
     }
 
     override fun onStop() {
-        val colorInt = (activity?.application as ApplicationData).colorInt
-
-        Toast.makeText(view?.context, "Stop: $colorInt", Toast.LENGTH_SHORT).show()
-
         super.onStop()
     }
 
@@ -87,10 +82,7 @@ class PenToolFragment: Fragment(), SeekBar.OnSeekBarChangeListener {
 
     override fun onStopTrackingTouch(seekBar: SeekBar?) {
         (activity?.application as ApplicationData).colorInt = getColor()
-        (activity?.application as ApplicationData).strokeSize = getSize()
-
-        Toast.makeText(view?.context, "TouchUp: ${Color.red(getColor())}", Toast.LENGTH_SHORT).show()
-
+        (activity?.application as ApplicationData).strokeWidth = getSize()
     }
 
     private fun getSize(): Int {
