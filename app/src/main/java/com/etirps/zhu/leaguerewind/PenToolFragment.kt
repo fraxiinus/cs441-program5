@@ -50,6 +50,9 @@ class PenToolFragment: Fragment(), SeekBar.OnSeekBarChangeListener {
         layout.findViewById<TextView>(R.id.tv_bluevalue).text = Color.blue(colorInt).toString()
         layout.findViewById<TextView>(R.id.tv_sizevalue).text = (strokeSize).toString()
 
+        // set initial preview color
+        layout.findViewById<TextView>(R.id.tv_previewcolor).setBackgroundColor(colorInt)
+
         // set color listeners
         layout.findViewById<SeekBar>(R.id.sb_redvalue).setOnSeekBarChangeListener(this)
         layout.findViewById<SeekBar>(R.id.sb_greenvalue).setOnSeekBarChangeListener(this)
