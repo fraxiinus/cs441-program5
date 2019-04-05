@@ -8,50 +8,85 @@
             android:orientation="vertical"
             android:layout_width="75dp"
             android:layout_height="0dp"
-            android:background="@android:color/darker_gray"
+            android:background="@drawable/platborder"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" android:id="@+id/toolbarlayout">
+<!--
         <TextView
                 android:text="Tool Layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/textView2"/>
-        <ImageButton
-            android:id="@+id/penButton"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:drawable="@drawable/pen"
-            android:layout_gravity="center"
-            tools:srcCompat="@drawable/pen"
-            android:scaleType="fitCenter"/>
-
-        <Button
-                android:id="@+id/undoButton"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:layout_marginHorizontal="5dp"
-                android:text="undo"/>
-
-        <Button
-                android:id="@+id/redoButton"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:layout_marginHorizontal="5dp"
-                android:text="redo"/>
+-->
 
         <ImageButton
-                android:id="@+id/restartButton"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:text="restart"
+                android:id="@+id/pen"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
                 android:layout_gravity="center"
-                android:drawable="@drawable/restart"
                 android:clickable="true"
                 android:focusable="true"
-                tools:srcCompat="@drawable/restart"
-                android:scaleType="fitCenter"/>
+                android:scaleType="fitCenter"
+                android:background="@drawable/pen"/>
+
+        <Button
+                android:id="@+id/champion"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:text="champ"
+                android:background="@drawable/roundcorner"/>
+
+        <Button
+                android:id="@+id/ward"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:text="ward"
+                android:background="@drawable/roundcorner"/>
+
+        <ImageButton
+                android:id="@+id/play"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:drawable="@drawable/play"
+                android:layout_gravity="center"
+                tools:srcCompat="@drawable/play"
+                android:scaleType="fitCenter"
+                android:background="@drawable/play"/>
+
+        <ImageButton
+                android:id="@+id/pause"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:drawable="@drawable/pause"
+                android:layout_gravity="center"
+                tools:srcCompat="@drawable/pause"
+                android:scaleType="fitCenter"
+                android:background="@drawable/pause"/>
+
+        <ImageButton
+                android:id="@+id/restart"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:drawable="@drawable/clear"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:background="@drawable/clear"/>
+
+
 
     </LinearLayout>
 
@@ -61,7 +96,8 @@
             android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/platborder"
             android:id="@+id/seekbarlayout">
         <TextView
                 android:text="Seek Layout"
