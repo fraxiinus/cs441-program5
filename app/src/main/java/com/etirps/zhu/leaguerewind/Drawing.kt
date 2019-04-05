@@ -41,6 +41,10 @@ class Drawing(context: Context, attrs: AttributeSet) : View(context, attrs) {
         canvas.drawPath(myPath, myPaint);
     }
 
+    private fun clearDrawing() {
+        myPath.reset()
+    }
+
     private fun pressDown(x: Float, y: Float) {
         myPath.moveTo(x, y)
         currentX = x
