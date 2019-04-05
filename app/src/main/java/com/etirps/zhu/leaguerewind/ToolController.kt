@@ -27,7 +27,6 @@ class ToolController(private val tokens: TokenImageManager, private val activity
 
     fun handleDrawTool() {
         showToolFragment(PenToolFragment.newInstance("Pen Tool"))
-
     }
 
     fun handleClearButton() {
