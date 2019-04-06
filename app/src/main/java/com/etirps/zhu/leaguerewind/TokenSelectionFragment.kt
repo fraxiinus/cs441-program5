@@ -5,9 +5,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListView
-import android.widget.SimpleAdapter
-import android.widget.TextView
+import android.widget.*
 
 class TokenSelectionFragment: Fragment() {
 
@@ -65,15 +63,24 @@ class TokenSelectionFragment: Fragment() {
         // Setup the adapter and give it to the list
         val arrayAdapter = SimpleAdapter(layout.context, content, R.layout.select_item_layout, fromMap, toMap.toIntArray())
         list.adapter = arrayAdapter
-        /*
-        // Build the dialog and show it
-        val dialog = AlertDialog.Builder(activity)
-        dialog.setTitle("Choose Image")
-        dialog.setView(layout)
-        dialog.create()
 
-        dialog.show()
-        */
+        // Set up the click listener
+        list.setOnItemClickListener { parent: AdapterView<*>, view1: View, position: Int, id: Long ->
+            val appData = activity?.application as ApplicationData
+            appData.drawMode = DrawingModes.TOKEN
+            appData.tokenIndex = position
+            appData.isEnemy = (view?.findViewById<Switch>(R.id.enemy_switch)?.isChecked) ?: false
+            appData.isWard = title.startsWith("Ward")
+
+            Toast.makeText(layout.context, "Tap to place token", Toast.LENGTH_SHORT).show()
+        }
+
+        // Set up listener for switch
+        val switch = layout.findViewById<Switch>(R.id.enemy_switch)
+        switch.setOnCheckedChangeListener { compoundButton: CompoundButton, b: Boolean ->
+            (activity?.application as ApplicationData).isEnemy = b
+        }
+
         return layout
     }
 
