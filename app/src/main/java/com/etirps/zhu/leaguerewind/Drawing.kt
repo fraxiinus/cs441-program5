@@ -34,25 +34,51 @@ class Drawing(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        canvas.drawPath(myPath, myPaint)
+
+        if((context.applicationContext as ApplicationData).clearFlag) {
+            myLines.clear()
+            (context.applicationContext as ApplicationData).clearFlag = false
+        }
+
+        for (line in myLines) {
+            canvas.drawPath(line.path, line.paint)
+        }
     }
 
     private fun pressDown(x: Float, y: Float) {
         val appData = context.applicationContext as ApplicationData
-        myPaint.color = appData.colorInt
-        myPaint.strokeWidth = appData.strokeWidth.toFloat()
 
-        myPath.moveTo(x, y)
+        val newPaint = Paint()
+
+        newPaint.apply {
+            color = appData.colorInt
+            style = Paint.Style.STROKE
+            strokeJoin = Paint.Join.ROUND
+            strokeWidth = appData.strokeWidth.toFloat()
+            isAntiAlias = true
+        }
+
+        val newPath = Path()
+
+        val newLine = LineStroke(newPaint, newPath)
+
+        newLine.path.moveTo(x, y)
         currentX = x
         currentY = y
+
+        myLines.add(newLine)
     }
 
     private fun pressUp() {
-        myPath.lineTo(currentX, currentY)
+        if(!myLines.isEmpty()) {
+            myLines.last().path.lineTo(currentX, currentY)
+        }
     }
 
     private fun move(x : Float, y : Float) {
-        myPath.quadTo(currentX, currentY, (x + currentX)/2, (y + currentY)/2)
+        if(!myLines.isEmpty()) {
+            myLines.last().path.quadTo(currentX, currentY, (x + currentX)/2, (y + currentY)/2)
+        }
         currentX = x
         currentY = y
     }

@@ -41,6 +41,7 @@ class ToolController(private val tokens: TokenImageManager, private val activity
         dialog.setPositiveButton("YES") { dialogInterface: DialogInterface, which: Int ->
             (activity.application as ApplicationData).clearFlag = true
             dialogInterface.dismiss()
+            Toast.makeText(activity, "Tap anywhere on the map to clear", Toast.LENGTH_SHORT).show()
         }
 
         dialog.setNegativeButton("NO") { dialogInterface: DialogInterface, which: Int ->
