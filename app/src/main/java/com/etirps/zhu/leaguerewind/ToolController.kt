@@ -10,9 +10,11 @@ import android.widget.ListView
 import android.widget.SimpleAdapter
 import android.widget.Toast
 
-class ToolController(private val tokens: TokenImageManager, private val activity: AppCompatActivity) {
+class ToolController(private val activity: AppCompatActivity) {
 
     private var currentFragment: Fragment? = null
+
+    private var tokens = (activity.application as ApplicationData).tokenImageManager
 
     fun getCurrentTool() {
     }

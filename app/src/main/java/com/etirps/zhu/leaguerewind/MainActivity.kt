@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         tokenImageManager = TokenImageManager()
-        toolController = ToolController(tokenImageManager, this)
+        toolController = ToolController(this)
 
         findViewById<ImageView>(R.id.champtool).setOnClickListener { toolController.handleChampTool() }
         findViewById<ImageView>(R.id.wardtool).setOnClickListener { toolController.handleWardTool() }
