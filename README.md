@@ -1,6 +1,6 @@
 # cs441-program5
 
-Our team wanted to create an app to allow players of the popular game "League of Legends" to draw on the game map to help visualize in game strategies. We brainstormed features and split up work to implement each feature. The app consists of an image of the in-game minimap and a toolbar consisting of buttons, where each button enables the user to interact with the minimap in a certain way.
+Our team wanted to create an app to allow players of the popular game "League of Legends" to draw on the game map to help visualize in game strategies. We brainstormed features and split up work to implement each feature. The app consists of an image of the in-game minimap and a toolbar consisting of buttons, where each button enables the user to interact with the minimap in a certain way. We've named the app LeagueBoard.
 
 ----Features----
 1. Pen tool
