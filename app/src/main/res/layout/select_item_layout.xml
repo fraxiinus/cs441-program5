@@ -15,10 +15,12 @@
             android:src="@mipmap/ic_launcher_round"/>
 
     <TextView
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:id="@+id/tv1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="text1"/>
+            android:text="text1"
+            android:fontFamily="@font/friz_quadrata_std_medium"
+            android:textColor="@android:color/white"/>
 </LinearLayout>

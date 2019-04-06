@@ -6,23 +6,25 @@
 
     <LinearLayout
             android:orientation="vertical"
-            android:layout_width="50dp"
+            android:layout_width="55dp"
             android:layout_height="match_parent"
-            android:background="@android:color/darker_gray"
             app:layout_constraintStart_toStartOf="parent"
             android:padding="5dp"
-            android:id="@+id/toolbarlayout">
+            android:id="@+id/toolbarlayout" android:background="@drawable/platborder">
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
                 android:paddingBottom="5dp"
-                app:srcCompat="@drawable/scribble"
+                android:paddingTop="5dp"
+                app:srcCompat="@drawable/pen"
                 android:id="@+id/drawtool"/>
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
                 android:paddingBottom="5dp"
@@ -31,6 +33,7 @@
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
                 android:paddingBottom="5dp"
@@ -39,10 +42,11 @@
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
                 android:paddingBottom="5dp"
-                app:srcCompat="@drawable/clearimage"
+                app:srcCompat="@drawable/clear"
                 android:id="@+id/cleartool"/>
     </LinearLayout>
 
@@ -53,7 +57,7 @@
             app:layout_constraintStart_toEndOf="@id/toolbarlayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="@id/placeholder"
-            android:id="@+id/maplayout">
+            android:id="@+id/maplayout" tools:layout_editor_absoluteY="84dp" app:layout_constraintHorizontal_bias="1.0">
         <ImageView
                 android:padding="5dp"
                 android:layout_width="wrap_content"
