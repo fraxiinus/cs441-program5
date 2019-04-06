@@ -6,120 +6,76 @@
 
     <LinearLayout
             android:orientation="vertical"
-            android:layout_width="75dp"
-            android:layout_height="0dp"
-            android:background="@drawable/platborder"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:id="@+id/toolbarlayout">
-<!--
-        <TextView
-                android:text="Tool Layout"
+            android:padding="5dp"
+            android:id="@+id/toolbarlayout" android:background="@drawable/platborder">
+        <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView2"/>
--->
-
-        <ImageButton
-                android:id="@+id/pen"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="15dp"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:focusable="true"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:scaleType="fitCenter"
-                android:background="@drawable/pen"/>
-
-        <Button
-                android:id="@+id/champion"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center"
-                android:text="champ"
-                android:background="@drawable/roundcorner"/>
-
-        <Button
-                android:id="@+id/ward"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center"
-                android:text="ward"
-                android:background="@drawable/roundcorner"/>
-
-        <ImageButton
-                android:id="@+id/play"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:drawable="@drawable/play"
-                android:layout_gravity="center"
-                tools:srcCompat="@drawable/play"
+                android:adjustViewBounds="true"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                app:srcCompat="@drawable/pen"
+                android:id="@+id/drawtool"/>
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:scaleType="fitCenter"
-                android:background="@drawable/play"/>
-
-        <ImageButton
-                android:id="@+id/pause"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:drawable="@drawable/pause"
-                android:layout_gravity="center"
-                tools:srcCompat="@drawable/pause"
+                android:adjustViewBounds="true"
+                android:paddingBottom="5dp"
+                app:srcCompat="@drawable/nidalee"
+                android:id="@+id/champtool"/>
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:scaleType="fitCenter"
-                android:background="@drawable/pause"/>
-
-        <ImageButton
-                android:id="@+id/restart"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:drawable="@drawable/clear"
-                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:paddingBottom="5dp"
+                app:srcCompat="@drawable/stealth"
+                android:id="@+id/wardtool"/>
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:scaleType="fitCenter"
-                android:background="@drawable/clear"/>
-
-
-
+                android:adjustViewBounds="true"
+                android:paddingBottom="5dp"
+                app:srcCompat="@drawable/clear"
+                android:id="@+id/cleartool"/>
     </LinearLayout>
 
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="75dp"
-            android:layout_height="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@drawable/platborder"
-            android:id="@+id/seekbarlayout">
-        <TextView
-                android:text="Seek Layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView3"/>
-    </LinearLayout>
 
     <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintEnd_toStartOf="@+id/seekbarlayout"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/toolbarlayout"
-            android:id="@+id/maplayout">
-        <TextView
-                android:text="Map Layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/textView"/>
+            android:layout_width="500dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/toolbarlayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/placeholder"
+            android:id="@+id/maplayout" tools:layout_editor_absoluteY="84dp" app:layout_constraintHorizontal_bias="1.0">
         <ImageView
+                android:padding="5dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" app:srcCompat="@drawable/srfull"
-                android:id="@+id/imageView"/>
+                android:layout_height="match_parent"
+
+                app:srcCompat="@drawable/srfull"
+                android:id="@+id/mapimage"/>
+
+        <com.etirps.zhu.leaguerewind.Drawing
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/drawview"/>
+    </FrameLayout>
+
+    <FrameLayout
+            android:id="@+id/placeholder"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
     </FrameLayout>
 </android.support.constraint.ConstraintLayout>
